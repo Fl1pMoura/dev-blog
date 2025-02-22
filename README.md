@@ -2,7 +2,7 @@
 
 > ⚠️ **Status: Em Desenvolvimento** - Este projeto está ativamente em desenvolvimento e algumas funcionalidades podem estar incompletas ou sujeitas a mudanças.
 
-Um blog moderno e interativo para desenvolvedores compartilharem conhecimento, construído com Next.js 14, TypeScript, e Tailwind CSS.
+Um blog moderno e interativo para desenvolvedores compartilharem conhecimento, construído com Next.js 15, TypeScript, e Tailwind CSS.
 
 ![DevBlog Preview](public/images/preview.png)
 
@@ -12,22 +12,37 @@ Um blog moderno e interativo para desenvolvedores compartilharem conhecimento, c
 - 📱 **Design Responsivo** - Interface adaptável para todos os dispositivos
 - 🎨 **UI Moderna** - Componentes estilizados com Tailwind CSS e shadcn/ui
 - 🔍 **SEO Otimizado** - Meta tags dinâmicas e URLs amigáveis
-- 📝 **Editor Markdown** - Suporte completo a Markdown com syntax highlighting
-- 💾 **Salvamento de Posts** - Sistema de bookmarks para leitura posterior
-- ❤️ **Sistema de Likes** - Interação dos usuários com os posts
+- 📝 **Markdown** - Suporte a renderização de conteúdo em Markdown
 - 🔄 **Compartilhamento** - Integração com Web Share API
-- 🏷️ **Tags e Categorias** - Organização e filtro de conteúdo
+- 🏷️ **Tags** - Organização e navegação por tags
 - 📊 **Tempo de Leitura** - Estimativa automática do tempo de leitura
 
 ## 🛠️ Tecnologias
 
 - [Next.js 15](https://nextjs.org/) - Framework React com App Router
 - [TypeScript](https://www.typescriptlang.org/) - Tipagem estática
-- [Tailwind CSS V4](https://tailwindcss.com/) - Framework CSS utility-first
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utility-first
 - [shadcn/ui](https://ui.shadcn.com/) - Componentes reutilizáveis
 - [Lucide Icons](https://lucide.dev/) - Biblioteca de ícones
 - [Sonner](https://sonner.emilkowal.ski/) - Notificações toast
 - [Markdown-it](https://github.com/markdown-it/markdown-it) - Parser Markdown
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── app/                    # App Router do Next.js
+│   ├── layout.tsx         # Layout principal
+│   ├── page.tsx           # Página inicial
+│   └── posts/             # Rotas de posts
+│       └── [slug]/        # Página dinâmica do post
+│           ├── page.tsx
+│           └── _components/
+├── components/            # Componentes reutilizáveis
+│   └── ui/               # Componentes base (shadcn/ui)
+└── lib/                  # Utilitários e configurações
+    └── utils.ts          # Funções utilitárias
+```
 
 ## 🚀 Começando
 
@@ -50,33 +65,13 @@ git clone https://github.com/seu-usuario/devblog.git
 pnpm install
 ```
 
-3. Configure as variáveis de ambiente
-
-```bash
-cp .env.example .env.local
-```
-
-4. Inicie o servidor de desenvolvimento
+3. Inicie o servidor de desenvolvimento
 
 ```bash
 pnpm dev
 ```
 
 Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
-
-## 📁 Estrutura do Projeto
-
-```
-src/
-├── app/                    # App Router do Next.js
-│   ├── posts/             # Rotas relacionadas aos posts
-│   └── tag/               # Rotas de tags
-├── components/            # Componentes reutilizáveis
-│   ├── ui/               # Componentes base (shadcn/ui)
-│   └── posts/            # Componentes específicos de posts
-├── lib/                   # Utilitários e configurações
-└── types/                # Definições de tipos TypeScript
-```
 
 ## 🔧 Configuração
 
