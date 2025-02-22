@@ -73,17 +73,6 @@ pnpm dev
 
 Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-## 🔧 Configuração
-
-### Ambiente de Desenvolvimento
-
-Ajuste as variáveis em `.env.local`:
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:3000/api
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
-
 ### Scripts Disponíveis
 
 - `pnpm dev` - Inicia o servidor de desenvolvimento
@@ -111,15 +100,9 @@ Seguimos o padrão [Conventional Commits](https://www.conventionalcommits.org/):
 - `refactor:` - Refatorações
 - `chore:` - Tarefas de manutenção
 
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ## 📧 Contato
 
-Seu Nome - [@seu_twitter](https://twitter.com/seu_twitter)
-
-Link do Projeto: [https://github.com/seu-usuario/devblog](https://github.com/seu-usuario/devblog)
+Link do Projeto: [DevBlog](https://dev-blog-rosy.vercel.app/)
 
 ---
 
