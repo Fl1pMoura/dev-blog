@@ -36,6 +36,7 @@ export const featuredPosts: Post[] = [
     createdAt: "2024-02-19",
     readingTime: 8,
     tags: ["Django", "API", "Backend"],
+    slug: "construindo-uma-api-rest-com-django-e-django-rest-framework",
   },
   {
     id: "2",
@@ -50,6 +51,7 @@ export const featuredPosts: Post[] = [
     createdAt: "2024-02-18",
     readingTime: 6,
     tags: ["Next.js", "Frontend", "React"],
+    slug: "nextjs-14-o-que-ha-de-novo",
   },
 ];
 
@@ -66,6 +68,8 @@ export const recentPosts: Post[] = [
     createdAt: "2024-02-17",
     readingTime: 5,
     tags: ["TypeScript", "JavaScript", "Programming"],
+    slug: "typescript-dicas-e-truques-para-melhorar-seu-codigo",
+    coverImage: "/api/placeholder/800/400",
   },
   {
     id: "4",
@@ -80,6 +84,7 @@ export const recentPosts: Post[] = [
     createdAt: "2024-02-16",
     readingTime: 7,
     tags: ["CSS", "Tailwind", "Frontend"],
+    slug: "tailwind-css-construindo-interfaces-modernas",
   },
   {
     id: "5",
@@ -93,6 +98,8 @@ export const recentPosts: Post[] = [
     createdAt: "2024-02-15",
     readingTime: 10,
     tags: ["Python", "Architecture", "Backend"],
+    slug: "clean-architecture-em-aplicacoes-python",
+    coverImage: "/api/placeholder/800/400",
   },
 ];
 
@@ -118,4 +125,8 @@ export const getPostsByTag = (tag: string) => {
   return [...featuredPosts, ...recentPosts].filter((post) =>
     post.tags.includes(tag),
   );
+};
+
+export const getPostBySlug = (slug: string) => {
+  return [...featuredPosts, ...recentPosts].find((post) => post.slug === slug);
 };

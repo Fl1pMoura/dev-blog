@@ -6,10 +6,11 @@ export interface Post {
   excerpt: string;
   content: string;
   author: Author;
-  coverImage?: string;
+  coverImage: string;
   likes: number;
   savedCount: number;
   createdAt: string;
   readingTime: number;
   tags: string[];
+  slug: string;
 }
