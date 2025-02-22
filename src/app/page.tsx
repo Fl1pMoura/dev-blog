@@ -1,13 +1,9 @@
-"use client";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { PostCard } from "@/components/PostCard";
 import { featuredPosts, recentPosts } from "@/mocks/MockData";
-import { Bookmark, ChevronRight, Clock, Heart } from "lucide-react";
-import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter();
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -44,66 +40,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {featuredPosts.map((post) => (
-              <article
-                key={post.id}
-                className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all cursor-pointer"
-                onClick={() => {
-                  router.push(`/posts/${post.slug}`);
-                }}
-              >
-                {post.coverImage && (
-                  <Image
-                    src={post.coverImage}
-                    alt={post.title}
-                    width={800}
-                    height={400}
-                    className="w-full h-48 object-cover"
-                  />
-                )}
-                <div className="p-6">
-                  <div className="flex gap-2 mb-3">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <Avatar>
-                        <AvatarImage src={post.author.avatar} />
-                        <AvatarFallback>
-                          {post.author.name.charAt(0)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <span className="text-sm text-gray-700">
-                        {post.author.name}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-4 text-gray-500">
-                      <div className="flex items-center gap-1">
-                        <Heart size={16} />
-                        <span className="text-sm">{post.likes}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Bookmark size={16} />
-                        <span className="text-sm">{post.savedCount}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock size={16} />
-                        <span className="text-sm">{post.readingTime} min</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
+              <PostCard key={post.id} post={post} />
             ))}
           </div>
         </section>
@@ -115,51 +52,7 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {recentPosts.map((post) => (
-              <article
-                key={post.id}
-                className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all cursor-pointer"
-                onClick={() => router.push(`/posts/${post.slug}`)}
-              >
-                <div className="p-6">
-                  <div className="flex gap-2 mb-3">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 text-sm">{post.excerpt}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <Avatar>
-                        <AvatarImage src={post.author.avatar} />
-                        <AvatarFallback>
-                          {post.author.name.charAt(0)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <span className="text-sm text-gray-700">
-                        {post.author.name}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-500">
-                      <div className="flex items-center gap-1">
-                        <Heart size={14} />
-                        <span className="text-sm">{post.likes}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock size={14} />
-                        <span className="text-sm">{post.readingTime} min</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
+              <PostCard key={post.id} post={post} variant="compact" />
             ))}
           </div>
         </section>
