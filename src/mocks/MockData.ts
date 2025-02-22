@@ -25,18 +25,143 @@ export const authors: Author[] = [
 export const featuredPosts: Post[] = [
   {
     id: "1",
-    title: "Construindo uma API REST com Django e Django REST Framework",
+    title: "Guia Completo de Markdown",
     excerpt:
-      "Um guia completo sobre como criar uma API RESTful utilizando Django e Django REST Framework com as melhores práticas.",
-    content: "# Conteúdo completo virá aqui em formato markdown",
+      "Um guia abrangente sobre todos os elementos e sintaxe do Markdown.",
+    content: `# Título Principal (H1)
+
+## Subtítulo (H2)
+
+### Seção (H3)
+
+#### Subseção (H4)
+
+##### Tópico (H5)
+
+###### Subtópico (H6)
+
+Parágrafo normal com **texto em negrito**, *texto em itálico*, e ***texto em negrito e itálico***. Você também pode usar __negrito__ e _itálico_ desta forma.
+
+Você pode ~~tachar~~ palavras também.
+
+## Links e Imagens
+
+[Link para o Google](https://www.google.com)
+
+![Imagem de exemplo](https://via.placeholder.com/800x400)
+
+## Listas
+
+### Lista não ordenada:
+* Item 1
+* Item 2
+  * Sub-item 2.1
+  * Sub-item 2.2
+* Item 3
+
+### Lista ordenada:
+1. Primeiro item
+2. Segundo item
+   1. Sub-item 2.1
+   2. Sub-item 2.2
+3. Terceiro item
+
+## Citações
+
+> Esta é uma citação simples.
+>
+> Esta é uma citação com múltiplos parágrafos.
+>
+> > Esta é uma citação aninhada.
+
+## Código
+
+Código em linha: \`const exemplo = "código"\`
+
+Bloco de código:
+
+\`\`\`javascript
+function exemplo() {
+  const mensagem = "Olá, mundo!";
+  console.log(mensagem);
+  return mensagem;
+}
+\`\`\`
+
+\`\`\`python
+def exemplo():
+    mensagem = "Olá, mundo!"
+    print(mensagem)
+    return mensagem
+\`\`\`
+
+## Tabelas
+
+| Cabeçalho 1 | Cabeçalho 2 | Cabeçalho 3 |
+|-------------|-------------|-------------|
+| Célula 1    | Célula 2    | Célula 3    |
+| Célula 4    | Célula 5    | Célula 6    |
+| Célula 7    | Célula 8    | Célula 9    |
+
+## Linha horizontal
+
+---
+
+## Task Lists
+
+- [x] Tarefa concluída
+- [ ] Tarefa pendente
+- [ ] Outra tarefa pendente
+
+## Notas de rodapé
+
+Aqui está uma nota de rodapé[^1].
+
+[^1]: Esta é a nota de rodapé.
+
+## Definições
+
+Termo
+: Definição do termo
+: Outra definição do termo
+
+## Emoji
+
+Você pode incluir emojis 🎉 ✨ 🚀
+
+## Destaque
+
+==Este texto está destacado==
+
+## Detalhes/Sumário (HTML)
+
+<details>
+<summary>Clique para expandir</summary>
+
+Este é o conteúdo que fica escondido até clicar.
+</details>
+
+## Matemática (usando LaTeX)
+
+Equação em linha: $E = mc^2$
+
+Equação em bloco:
+
+$$
+\\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}
+$$
+
+---
+
+Este é um exemplo de todos os elementos markdown mais comuns. Você pode usar este guia como referência para formatação.`,
     author: authors[0],
     coverImage: "/api/placeholder/800/400",
-    likes: 156,
-    savedCount: 89,
-    createdAt: "2024-02-19",
-    readingTime: 8,
-    tags: ["Django", "API", "Backend"],
-    slug: "construindo-uma-api-rest-com-django-e-django-rest-framework",
+    likes: 256,
+    savedCount: 189,
+    createdAt: "2024-02-20",
+    readingTime: 10,
+    tags: ["Markdown", "Documentação", "Guia"],
+    slug: "guia-completo-de-markdown",
   },
   {
     id: "2",

@@ -1,21 +1,57 @@
 import BackButton from "@/app/_components/BackButton";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getPostBySlug, getRecentPosts } from "@/mocks/MockData";
+import console from "console";
+import hljs from "highlight.js";
+import "highlight.js/styles/github.css";
+import "katex/dist/katex.min.css";
 import { Bookmark, ChevronRight, Clock, Heart, Share2 } from "lucide-react";
+import MarkdownIt from "markdown-it";
+import markdownItDeflist from "markdown-it-deflist";
+import markdownItFootnote from "markdown-it-footnote";
+import markdownItKatex from "markdown-it-katex";
+import markdownItMark from "markdown-it-mark";
+import markdownItTaskLists from "markdown-it-task-lists";
 import Image from "next/image";
 import Link from "next/link";
+
+const md = new MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true,
+  highlight: function (str: string, lang: string) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(str, { language: lang }).value;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    return "";
+  },
+})
+  .use(markdownItTaskLists)
+  .use(markdownItFootnote)
+  .use(markdownItDeflist)
+  .use(markdownItMark)
+  .use(markdownItKatex);
 
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getPostBySlug(params.slug);
+  const resolvedParams = await params;
+  const post = await getPostBySlug(resolvedParams.slug);
   const recentPosts = getRecentPosts().slice(0, 3);
 
   if (!post) {
     return <div>Post não encontrado</div>;
   }
+
+  // Garantir que post.content existe e é uma string
+  const content = typeof post.content === "string" ? post.content : "";
+  const contentHtml = md.render(content);
 
   return (
     <div className="min-h-screen bg-gray-50 pb-12">
@@ -87,9 +123,10 @@ export default async function PostPage({
           </div>
 
           {/* Conteúdo do Post */}
-          <div className="typography-lg typography-slate max-w-none">
-            {post.content}
-          </div>
+          <div
+            className="typography max-w-none"
+            dangerouslySetInnerHTML={{ __html: contentHtml }}
+          />
 
           {/* Estatísticas e ações do post */}
           <div className="flex items-center justify-between mt-8 pt-8 border-t border-gray-200">

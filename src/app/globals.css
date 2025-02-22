@@ -1,6 +1,197 @@
 @import "tailwindcss";
 
-@plugin "tailwindcss-animate";
+.typography {
+  /* Estilos base para tipografia */
+  & h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+  }
+
+  & h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--foreground);
+  }
+
+  & h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--foreground);
+  }
+
+  & p {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+    color: var(--foreground);
+  }
+
+  & ul,
+  & ol {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.625rem;
+    color: var(--foreground);
+  }
+
+  & li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  & ul > li {
+    list-style-type: disc;
+  }
+
+  & ol > li {
+    list-style-type: decimal;
+  }
+
+  & code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.875em;
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+  }
+
+  & pre {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+  }
+
+  & pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  & a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  & blockquote {
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    color: var(--muted-foreground);
+  }
+
+  & img {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.5rem;
+  }
+
+  & hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-color: var(--border);
+  }
+
+  & table {
+    width: 100%;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-collapse: collapse;
+  }
+
+  & th {
+    background-color: var(--secondary);
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  & td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  & .math-inline {
+    padding: 0.2em 0.4em;
+    background-color: var(--secondary);
+    border-radius: 0.25rem;
+  }
+
+  & .math-block {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+    overflow-x: auto;
+  }
+
+  /* Task lists */
+  & input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+
+  /* Footnotes */
+  & .footnotes {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+
+  /* Definition lists */
+  & dl {
+    margin: 1.25rem 0;
+  }
+
+  & dt {
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  & dd {
+    margin-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--muted-foreground);
+  }
+
+  /* Details/Summary */
+  & details {
+    margin: 1.25rem 0;
+    padding: 0.75rem;
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+  }
+
+  & summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  /* Highlighted text */
+  & mark {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+  }
+}
 
 @custom-variant dark (&:is(.dark *));
 
