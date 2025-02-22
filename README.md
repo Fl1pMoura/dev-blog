@@ -2,7 +2,9 @@
 
 > ⚠️ **Status: Em Desenvolvimento** - Este projeto está ativamente em desenvolvimento e algumas funcionalidades podem estar incompletas ou sujeitas a mudanças.
 
-Um blog moderno e interativo para desenvolvedores compartilharem conhecimento, construído com Next.js 14, TypeScript, e Tailwind CSS.
+Um blog moderno e interativo para desenvolvedores compartilharem conhecimento, construído com Next.js 15, TypeScript, e Tailwind CSS.
+
+![DevBlog Preview](public/images/preview.png)
 
 ## ✨ Funcionalidades
 
@@ -17,7 +19,7 @@ Um blog moderno e interativo para desenvolvedores compartilharem conhecimento, c
 
 ## 🛠️ Tecnologias
 
-- [Next.js 14](https://nextjs.org/) - Framework React com App Router
+- [Next.js 15](https://nextjs.org/) - Framework React com App Router
 - [TypeScript](https://www.typescriptlang.org/) - Tipagem estática
 - [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utility-first
 - [shadcn/ui](https://ui.shadcn.com/) - Componentes reutilizáveis
